@@ -1,0 +1,17 @@
+.section-wrapper {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    backface-visibility: hidden;
+    transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+}
+
+.section-huge {
+    background-image: url(../images/dark_tint.png), url(../images/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 14em 0em 14em;
+    text-align: center;
+}
