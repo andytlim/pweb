@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "npm run build && node ./bin/www",
-    "build": "minime && babel public/react/jsx -d public/react/build"
+    "build": "minime -r && browserify src/components/Home/index.jsx -o public/components/Home/index.js -t [ babelify ]",
+    "preinstall": "npm prune",
+    "postinstall": "bower install"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -14,10 +16,19 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "pug": "^2.0.0-beta3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-transform-react-jsx": "^6.8.0"
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "babelify": "^7.3.0",
+    "bower": "^1.7.9",
+    "browserify": "^14.0.0",
+    "minime": "^1.1.5"
   }
 }

@@ -1,0 +1,11 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 280px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}

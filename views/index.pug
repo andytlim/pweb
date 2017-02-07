@@ -2,11 +2,7 @@ extends ./global/layout
 
 block assets
   meta(name='description', content='')
-    
-  link(rel='stylesheet', href='/css/index.css')
-  script(src='/react/build/index.js')
 
 block content
-  script.
-    ReactDOM.render(pweb, document.body);
+  script(src='/components/Home/index.js')
   

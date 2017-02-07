@@ -1,0 +1,24 @@
+svg {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+svg * {
+  transform-origin: 50% 50%;
+}
+svg .gold-ring {
+  stroke: #ffb033;
+}
+svg .gold-dark-ring {
+  stroke: rgba(179, 109, 0, 0.5);
+}
+svg .gray-ring {
+  stroke: #c9c9c9;
+}
+svg .overwatch-logo {
+  fill: #c9c9c9;
+  stroke: transparent;
+}

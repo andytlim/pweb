@@ -1,8 +1,19 @@
 {
   "js": [
-  
+    {
+      "source": "",
+      "target": "",
+      "map": {
+      }
+    }
   ],
   "css": [
-    
+    {
+      "source": "src/components/Home",
+      "target": "public/components/Home",
+      "map": {
+        "base.min.css": [ "base.css", "index.css", "DesktopImage.css", "OverwatchLogo.css", "TypeItOut.css" ]
+      }
+    }
   ]
 }

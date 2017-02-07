@@ -1,0 +1,41 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Proxima Nova';
+  color: black;
+  background: #1c1c1c;
+}
+
+html *, body * {
+  box-sizing: border-box;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.alt-section-1 {
+  background: #1c1c1c;
+  color: #fff;
+  width: 800px;
+  margin: auto;
+  padding: 50px 0px;
+  border-bottom: 1px solid #fff;
+}
+
+.alt-section-2 {
+  background: #1c1c1c;
+  color: #fff;
+  width: 800px;
+  height: 300px;
+  margin: auto;
+  padding: 50px 0px;
+}
+
+.blurb {
+  text-align: center;
+  width: 450px;
+  margin: auto;
+}
