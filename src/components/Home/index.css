@@ -8,14 +8,13 @@
 
 .section-me {
     padding-top: 100px;
-    background: #525760;
     /*background: -moz-linear-gradient(-75deg, #525760 1%, #272F39 100%);
     background: -webkit-gradient(linear, left top, right bottom, color-stop(1%, #525760), color-stop(100%, #272F39));
     background: -webkit-linear-gradient(-75deg, #525760 1%, #272F39 100%);
     background: -o-linear-gradient(-75deg, #525760 1%, #272F39 100%);
     background: -ms-linear-gradient(-75deg, #525760 1%, #272F39 100%);
     background: linear-gradient(135deg, #525760 1%, #272F39 100%);*/
-    background: linear-gradient(rgba(27, 42, 63, 0.9) 10%, #1B2A3F 20%);
+    background: #eee;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$first, endColorstr=$second,GradientType=1 );
     display: -webkit-box;
     display: -webkit-flex;

@@ -29,7 +29,7 @@ class SectionMe extends React.Component {
         <section className='alt-section-1'>
           <DesktopImage />
           <TypeItOut />
-          <div className='blurb'>I have 5-6+ years expierence in software engineering. I specialize in full stack or back-end services. I currently have one tool on the market for purchase called Ramune. I am actively looking for investment opportunities and can offer technical mentorship and consulting.</div>
+          <div className='blurb'>I have 5-6+ years expierence in software engineering. I specialize in full stack and back-end services. I currently have one tool on the market for purchase called Ramune. I am actively looking for investment opportunities and can offer technical mentorship and consulting.</div>
         </section>
         <section className='alt-section-2'>
           <OverwatchLogo />
