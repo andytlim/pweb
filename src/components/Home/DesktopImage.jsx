@@ -2,10 +2,33 @@
  * CodePen: http://codepen.io/lloydwheeler/pen/iuCGF
  */
 class DesktopImage extends React.Component {
+  constructor() {
+    super();
+    this.getView = this.getView.bind(this);
+    this.updateView = this.updateView.bind(this);
+    this.state = {
+      view: this.getView()
+    };
+    window.addEventListener('resize', this.updateView);
+  }
+    
+  updateView() {
+    this.setState({view: this.getView()});
+  }
+  
+  getView() {
+    if (window.innerWidth < 600)
+      return 'phone';
+    else if (window.innerWidth < 1000)
+      return 'tablet';    
+    else 
+      return 'desktop';
+  }
+  
   render() {
     return (
       <div className="device">
-        <div className="desktop">
+        <div className={this.state.view}>
           <div className="camera"></div>
           <div className="close"></div>
           <div className="minimise"></div>

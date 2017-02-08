@@ -3,7 +3,7 @@
  */
 class OverwatchLogo extends React.Component {
   componentDidMount() {
-    var svg = document.querySelector('svg');
+    var svg = document.querySelector('svg.ow');
     var goldDarkRing = svg.querySelector('.gold-dark-ring');
     var goldRing1 = svg.getElementById('gold-ring-1');
     var goldRing2 = svg.getElementById('gold-ring-2');
@@ -287,7 +287,7 @@ class OverwatchLogo extends React.Component {
   render() {
     return (
       <a href="http://masteroverwatch.com/profile/pc/us/azle-11499" target="_blank">
-        <svg width="200" height="200" viewPort="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg className="ow" width="200" height="200" viewPort="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <g className="overwatch-logo" transform="translate(50, 50)">
             <path id="path3961" d="M49.5,0C38.3,0.1,27.3,4,18.7,11l9.4,11c8-6.3,18.7-8.9,28.7-6.9c5.5,1.1,10.7,3.5,15.1,6.9
             l9.4-11C72.4,3.8,61-0.2,49.5,0z"/>

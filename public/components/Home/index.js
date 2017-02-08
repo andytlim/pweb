@@ -20529,7 +20529,7 @@ var ContainerNav = function (_React$Component) {
 exports.default = ContainerNav;
 
 },{}],179:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -20552,64 +20552,82 @@ var DesktopImage = function (_React$Component) {
   function DesktopImage() {
     _classCallCheck(this, DesktopImage);
 
-    return _possibleConstructorReturn(this, (DesktopImage.__proto__ || Object.getPrototypeOf(DesktopImage)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (DesktopImage.__proto__ || Object.getPrototypeOf(DesktopImage)).call(this));
+
+    _this.getView = _this.getView.bind(_this);
+    _this.updateView = _this.updateView.bind(_this);
+    _this.state = {
+      view: _this.getView()
+    };
+    window.addEventListener('resize', _this.updateView);
+    return _this;
   }
 
   _createClass(DesktopImage, [{
-    key: "render",
+    key: 'updateView',
+    value: function updateView() {
+      this.setState({ view: this.getView() });
+    }
+  }, {
+    key: 'getView',
+    value: function getView() {
+      if (window.innerWidth < 600) return 'phone';else if (window.innerWidth < 1000) return 'tablet';else return 'desktop';
+    }
+  }, {
+    key: 'render',
     value: function render() {
       return React.createElement(
-        "div",
-        { className: "device" },
+        'div',
+        { className: 'device' },
         React.createElement(
-          "div",
-          { className: "desktop" },
-          React.createElement("div", { className: "camera" }),
-          React.createElement("div", { className: "close" }),
-          React.createElement("div", { className: "minimise" }),
-          React.createElement("div", { className: "maximise" }),
-          React.createElement("div", { className: "speaker" }),
+          'div',
+          { className: this.state.view },
+          React.createElement('div', { className: 'camera' }),
+          React.createElement('div', { className: 'close' }),
+          React.createElement('div', { className: 'minimise' }),
+          React.createElement('div', { className: 'maximise' }),
+          React.createElement('div', { className: 'speaker' }),
           React.createElement(
-            "div",
-            { className: "screen" },
-            React.createElement("div", { className: "scrollbar" }),
+            'div',
+            { className: 'screen' },
+            React.createElement('div', { className: 'scrollbar' }),
             React.createElement(
-              "header",
+              'header',
               null,
               React.createElement(
-                "div",
-                { className: "menu" },
-                React.createElement("div", { className: "menu-bar" }),
-                React.createElement("div", { className: "menu-bar" }),
-                React.createElement("div", { className: "menu-bar" })
+                'div',
+                { className: 'menu' },
+                React.createElement('div', { className: 'menu-bar' }),
+                React.createElement('div', { className: 'menu-bar' }),
+                React.createElement('div', { className: 'menu-bar' })
               )
             ),
-            React.createElement("div", { className: "image" }),
+            React.createElement('div', { className: 'image' }),
             React.createElement(
-              "div",
-              { className: "container" },
+              'div',
+              { className: 'container' },
               React.createElement(
-                "div",
-                { className: "main" },
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" })
+                'div',
+                { className: 'main' },
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' })
               ),
               React.createElement(
-                "div",
-                { className: "sidebar" },
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" }),
-                React.createElement("div", { className: "faux-text" })
+                'div',
+                { className: 'sidebar' },
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' }),
+                React.createElement('div', { className: 'faux-text' })
               )
             )
           ),
           React.createElement(
-            "div",
-            { className: "button" },
-            React.createElement("div", { className: "inner-button" })
+            'div',
+            { className: 'button' },
+            React.createElement('div', { className: 'inner-button' })
           )
         )
       );
@@ -20651,7 +20669,7 @@ var OverwatchLogo = function (_React$Component) {
   _createClass(OverwatchLogo, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var svg = document.querySelector('svg');
+      var svg = document.querySelector('svg.ow');
       var goldDarkRing = svg.querySelector('.gold-dark-ring');
       var goldRing1 = svg.getElementById('gold-ring-1');
       var goldRing2 = svg.getElementById('gold-ring-2');
@@ -20932,7 +20950,7 @@ var OverwatchLogo = function (_React$Component) {
         { href: 'http://masteroverwatch.com/profile/pc/us/azle-11499', target: '_blank' },
         React.createElement(
           'svg',
-          { width: '200', height: '200', viewPort: '0 0 200 200', version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
+          { className: 'ow', width: '200', height: '200', viewPort: '0 0 200 200', version: '1.1', xmlns: 'http://www.w3.org/2000/svg' },
           React.createElement(
             'g',
             { className: 'overwatch-logo', transform: 'translate(50, 50)' },
@@ -20958,6 +20976,168 @@ var OverwatchLogo = function (_React$Component) {
 exports.default = OverwatchLogo;
 
 },{}],181:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Timeline = function (_React$Component) {
+   _inherits(Timeline, _React$Component);
+
+   function Timeline() {
+      _classCallCheck(this, Timeline);
+
+      return _possibleConstructorReturn(this, (Timeline.__proto__ || Object.getPrototypeOf(Timeline)).apply(this, arguments));
+   }
+
+   _createClass(Timeline, [{
+      key: "render",
+      value: function render() {
+         return React.createElement(
+            "div",
+            { id: "timeline" },
+            React.createElement(
+               "svg",
+               { id: "Layer_1", viewBox: "0 0 1170 324.77" },
+               React.createElement("line", { className: "cls-1 path", y1: "162.38", x2: "1170", y2: "162.38" }),
+               React.createElement("line", { className: "cls-2 path2", x1: "48.47", y1: "159.51", x2: "48.47", y2: "108.8" }),
+               React.createElement("line", { className: "cls-2 path3", x2: "222.93", y2: "213.1", x1: "222.93", y1: "162.38" }),
+               React.createElement("line", { className: "cls-2 path4", x1: "396.43", y1: "160.51", x2: "396.43", y2: "109.8" }),
+               React.createElement("line", { className: "cls-2 path5", x2: "569.93", y2: "213.97", x1: "569.93", y1: "163.26" }),
+               React.createElement("line", { className: "cls-2 path6", x1: "746.93", y1: "160.51", x2: "746.93", y2: "109.8" }),
+               React.createElement("line", { className: "cls-2 path7", x2: "920.43", y2: "213.97", x1: "920.43", y1: "163.26" }),
+               React.createElement("circle", { className: "cls-3 circle1", cx: "47.47", cy: "44.34", r: "43.84" }),
+               React.createElement("circle", { className: "cls-3 circle2", cx: "226.93", cy: "275.41", r: "43.84" }),
+               React.createElement("circle", { className: "cls-3 circle3", cx: "396.43", cy: "44.34", r: "43.84" }),
+               React.createElement("circle", { className: "cls-3 circle4", cx: "746.93", cy: "44.34", r: "43.84" }),
+               React.createElement("circle", { className: "cls-3 circle5", cx: "569.93", cy: "280.43", r: "43.84" }),
+               React.createElement("circle", { className: "cls-3 circle6", cx: "920.43", cy: "280.43", r: "43.84" }),
+               React.createElement(
+                  "div",
+                  { className: "textbox1" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Before you arrive..."
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Your guide will catch fresh bait, ",
+                     React.createElement("br", null),
+                     "fuel up the boat and setup at the ",
+                     React.createElement("br", null),
+                     "docks."
+                  )
+               ),
+               React.createElement(
+                  "div",
+                  { className: "textbox2" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Meet your guide at ",
+                     React.createElement("br", null),
+                     "the launch point"
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Your guide will be waiting",
+                     React.createElement("br", null),
+                     "for you at the boat, ready to ",
+                     React.createElement("br", null),
+                     "help you get situated."
+                  )
+               ),
+               React.createElement(
+                  "div",
+                  { className: "textbox3" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Find where the fish ",
+                     React.createElement("br", null),
+                     "are biting that day."
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Your guide will catch fresh bait, ",
+                     React.createElement("br", null),
+                     "fuel up the boat and setup at the ",
+                     React.createElement("br", null),
+                     "docks."
+                  )
+               ),
+               React.createElement(
+                  "div",
+                  { className: "textbox4" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Your guide will teach ",
+                     React.createElement("br", null),
+                     "you how to cast."
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Lorem ipsum dolor sit amet, ",
+                     React.createElement("br", null),
+                     "consectetur adipiscing elit."
+                  )
+               ),
+               React.createElement(
+                  "div",
+                  { className: "textbox5" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Dinner is served."
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Call it a day and head back to the docks ",
+                     React.createElement("br", null),
+                     "where your guide will fillet your catches."
+                  )
+               ),
+               React.createElement(
+                  "div",
+                  { className: "textbox6" },
+                  React.createElement(
+                     "h3",
+                     { className: "tbc" },
+                     "Don't forget to tip!"
+                  ),
+                  React.createElement(
+                     "h4",
+                     null,
+                     "Remember, your guide works hard and it\u2019s polite to tip for a job well done!"
+                  )
+               )
+            )
+         );
+      }
+   }]);
+
+   return Timeline;
+}(React.Component);
+
+exports.default = Timeline;
+
+},{}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21010,7 +21190,7 @@ var TypeItOut = function (_React$Component) {
 
 exports.default = TypeItOut;
 
-},{}],182:[function(require,module,exports){
+},{}],183:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21039,6 +21219,10 @@ var _TypeItOut = require('./TypeItOut.jsx');
 
 var _TypeItOut2 = _interopRequireDefault(_TypeItOut);
 
+var _Timeline = require('./Timeline.jsx');
+
+var _Timeline2 = _interopRequireDefault(_Timeline);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21047,16 +21231,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SectionMe = function (_React$Component) {
-  _inherits(SectionMe, _React$Component);
+var Home = function (_React$Component) {
+  _inherits(Home, _React$Component);
 
-  function SectionMe() {
-    _classCallCheck(this, SectionMe);
+  function Home() {
+    _classCallCheck(this, Home);
 
-    return _possibleConstructorReturn(this, (SectionMe.__proto__ || Object.getPrototypeOf(SectionMe)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
   }
 
-  _createClass(SectionMe, [{
+  _createClass(Home, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -21077,7 +21261,7 @@ var SectionMe = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'Hi, I am [A].'
+              'Hi, I am [A]ndy.'
             ),
             _react2.default.createElement(
               'p',
@@ -21114,6 +21298,15 @@ var SectionMe = function (_React$Component) {
         ),
         _react2.default.createElement(
           'section',
+          { className: 'alt-section-1' },
+          _react2.default.createElement(
+            'div',
+            { className: 'blurb' },
+            'More about me~'
+          )
+        ),
+        _react2.default.createElement(
+          'section',
           { className: 'alt-section-2' },
           _react2.default.createElement(_OverwatchLogo2.default, null)
         )
@@ -21121,9 +21314,9 @@ var SectionMe = function (_React$Component) {
     }
   }]);
 
-  return SectionMe;
+  return Home;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(SectionMe, null), document.body);
+_reactDom2.default.render(_react2.default.createElement(Home, null), document.body);
 
-},{"./ContainerNav.jsx":178,"./DesktopImage.jsx":179,"./OverwatchLogo.jsx":180,"./TypeItOut.jsx":181,"react":177,"react-dom":26}]},{},[182]);
+},{"./ContainerNav.jsx":178,"./DesktopImage.jsx":179,"./OverwatchLogo.jsx":180,"./Timeline.jsx":181,"./TypeItOut.jsx":182,"react":177,"react-dom":26}]},{},[183]);

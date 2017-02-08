@@ -78,6 +78,7 @@ section {
 .section-me .container-nav {
     padding: 30px;
     text-align: center;
+    background: #1c1c1c;
 }
 
 .section-me .container-nav a:hover {

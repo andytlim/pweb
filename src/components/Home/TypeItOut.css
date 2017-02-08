@@ -1,4 +1,4 @@
-h1 {
+h1.type-it {
   font-family: 'Open Sans', sans-serif;
   display: block;
   width: 100%;
@@ -8,4 +8,10 @@ h1 {
   transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
+}
+
+@media (max-width: 600px) {
+  h1.type-it {
+    display: none;
+  }
 }
