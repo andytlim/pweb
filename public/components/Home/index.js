@@ -21302,7 +21302,7 @@ var Home = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'blurb' },
-            'More about me~'
+            'TODO: Add more about me :)'
           )
         ),
         _react2.default.createElement(
